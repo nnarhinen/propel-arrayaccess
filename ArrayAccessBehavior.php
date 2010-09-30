@@ -1,4 +1,17 @@
 <?php
+
+/**
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @license    MIT License
+ */
+
+/**
+ * The main class for the Behavior
+ *
+ * @author     Niklas Närhinen <niklas@narhinen.net>
+ */
 class ArrayAccessBehavior extends Behavior
 {
 	public function objectMethods()
