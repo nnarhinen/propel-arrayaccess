@@ -8,7 +8,7 @@ Usage
 
 ### schema.xml
 
-	<database name="tallimestari" defaultIdMethod="native">
+	<database name="mydatabase" defaultIdMethod="native">
 		<behavior name="arrayaccess" />
 		....
 	</database>
