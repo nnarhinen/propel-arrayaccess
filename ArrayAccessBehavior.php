@@ -36,7 +36,13 @@ class ArrayAccessBehavior extends Behavior
 		return "
 public function offsetExists(\$offset)
 {
-	return \$this->getByName(\$offset) !== null;
+	try {
+		\$getter = 'get' . \$offset;
+		return \$this->\$getter() !== null;
+	}
+	catch (PropelException \$ex) {
+		return false;
+	}
 }
 ";
 	}
@@ -46,7 +52,8 @@ public function offsetExists(\$offset)
 		return "
 public function offsetGet(\$offset)
 {
-	return \$this->getByName(\$offset);
+	\$getter = 'get' . \$offset;
+	return \$this->\$getter();
 }
 ";
 	}
@@ -56,7 +63,11 @@ public function offsetGet(\$offset)
 		return "
 public function offsetUnset(\$offset)
 {
-	\$this->setByName(\$offset, null);
+	try {
+		\$setter = 'set' . \$offset;
+		\$this->\$setter(null);
+	}
+	catch (PropelException \$ex) { }
 }
 ";
 	}
@@ -66,7 +77,8 @@ public function offsetUnset(\$offset)
 		return "
 public function offsetSet(\$offset, \$value)
 {
-	\$this->setByName(\$offset, \$value);
+	\$setter = 'set' . \$offset;
+	\$this->\$setter(\$value);
 }
 ";
 	}
