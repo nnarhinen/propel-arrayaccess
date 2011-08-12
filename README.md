@@ -9,7 +9,7 @@ Usage
 ### schema.xml
 
 ```xml
-	<database name="mydatabase" defaultIdMethod="native">
-		<behavior name="arrayaccess" />
-		....
-	</database>
+<database name="mydatabase" defaultIdMethod="native">
+	<behavior name="arrayaccess" />
+	....
+</database>
