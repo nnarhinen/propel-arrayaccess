@@ -8,6 +8,7 @@ Usage
 
 ### schema.xml
 
+```xml
 	<database name="mydatabase" defaultIdMethod="native">
 		<behavior name="arrayaccess" />
 		....
